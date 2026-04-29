@@ -2,7 +2,7 @@ const themes = {
   animals: {
     words: ["TIGER", "PANDA", "HORSE", "RABBIT", "KOALA", "ZEBRA"],
     mystery: "WHALE",
-    hint: "The mystery animal lives in the ocean."
+    hint: "The mystery animal lives in the ocean test."
   },
   space: {
     words: ["PLANET", "COMET", "ROCKET", "MOON", "ORBIT", "STAR"],
