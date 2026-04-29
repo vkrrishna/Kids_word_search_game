@@ -1,6 +1,6 @@
 const themes = {
   animals: {
-    words: ["TIGER", "PANDA", "HORSE", "RABBIT", "KOALA", "ZEBRA"],
+    words: ["TIGER", "PANDA", "HORSE", "RABBIT", "KOALA", "ZEBRA","Cheetah"],
     mystery: "WHALE",
     hint: "The mystery animal lives in the ocean."
   },
