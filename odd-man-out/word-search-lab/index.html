@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Search Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="top-band">
+        <div>
+          <p class="eyebrow">Activity 1</p>
+          <h1>Word Search Lab</h1>
+        </div>
+        <div class="stats" aria-live="polite">
+          <span><strong id="foundCount">0</strong>/<strong id="totalCount">0</strong> found</span>
+          <span id="timer">00:00</span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Puzzle controls">
+        <label>
+          Theme
+          <select id="themeSelect">
+            <option value="animals">Animals</option>
+            <option value="space">Space</option>
+            <option value="food">Food</option>
+            <option value="feelings">Feelings</option>
+          </select>
+        </label>
+        <button id="newPuzzleBtn" type="button">New Puzzle</button>
+        <button id="hintBtn" type="button">Hint</button>
+        <button id="clearBtn" type="button">Clear Drawing</button>
+      </section>
+
+      <section class="workspace">
+        <div class="puzzle-area">
+          <div id="grid" class="grid" aria-label="Word search grid"></div>
+          <p id="hintText" class="hint-text" aria-live="polite"></p>
+        </div>
+
+        <aside class="side-panel">
+          <section class="word-panel">
+            <div class="panel-heading">
+              <h2>Find These Words</h2>
+              <span id="mysteryBadge">1 mystery word</span>
+            </div>
+            <ul id="wordList" class="word-list"></ul>
+          </section>
+
+          <section class="twist-panel">
+            <h2>Sentence Twist</h2>
+            <p id="promptText">Find a word to unlock a sentence prompt.</p>
+            <form id="sentenceForm">
+              <input id="sentenceInput" type="text" placeholder="Write your sentence here" autocomplete="off" />
+              <button type="submit">Save</button>
+            </form>
+            <ul id="sentenceList" class="sentence-list"></ul>
+          </section>
+
+          <section class="draw-panel">
+            <div class="panel-heading">
+              <h2>Draw It</h2>
+              <div class="swatches" aria-label="Drawing colors">
+                <button class="swatch active" type="button" data-color="#2b6cb0" style="--swatch:#2b6cb0" aria-label="Blue"></button>
+                <button class="swatch" type="button" data-color="#c53030" style="--swatch:#c53030" aria-label="Red"></button>
+                <button class="swatch" type="button" data-color="#2f855a" style="--swatch:#2f855a" aria-label="Green"></button>
+                <button class="swatch" type="button" data-color="#111827" style="--swatch:#111827" aria-label="Black"></button>
+              </div>
+            </div>
+            <canvas id="drawCanvas" width="620" height="340" aria-label="Drawing canvas"></canvas>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
