@@ -1,2 +1,2 @@
-# game1
+# Kids Word Search game
 Kids word game
