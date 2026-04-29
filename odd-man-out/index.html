@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odd Man Out</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="top-band">
+        <div>
+          <p class="eyebrow">Activity 2</p>
+          <h1>Odd Man Out</h1>
+        </div>
+        <div class="stats" aria-live="polite">
+          <span><strong id="scoreCount">0</strong> score</span>
+          <span><strong id="roundCount">1</strong>/<strong id="totalRounds">0</strong> rounds</span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Activity controls">
+        <label>
+          Set size
+          <select id="setSizeSelect">
+            <option value="4">4 items</option>
+            <option value="5">5 items</option>
+          </select>
+        </label>
+        <button id="newRoundBtn" type="button">New Round</button>
+        <button id="showAnswerBtn" type="button">Show Answer</button>
+      </section>
+
+      <section class="workspace">
+        <section class="play-panel" aria-labelledby="promptTitle">
+          <div class="prompt-row">
+            <div>
+              <p id="roundTheme" class="round-theme">Categories</p>
+              <h2 id="promptTitle">Which item does not belong?</h2>
+            </div>
+            <span id="statusBadge" class="status-badge">Choose one</span>
+          </div>
+
+          <div id="itemGrid" class="item-grid" aria-label="Answer choices"></div>
+
+          <form id="answerForm" class="answer-form">
+            <label for="reasonInput">Explain your reason</label>
+            <textarea
+              id="reasonInput"
+              rows="4"
+              placeholder="Example: carrot does not belong because it is a vegetable, and the others are fruits."
+            ></textarea>
+            <div class="form-actions">
+              <button type="submit">Check</button>
+              <button id="acceptAlternateBtn" type="button">Accept My Reason</button>
+            </div>
+          </form>
+
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+        </section>
+
+        <aside class="side-panel">
+          <section class="skill-panel">
+            <h2>Reason Builder</h2>
+            <div class="sentence-frame">
+              <span id="selectedWord">This item</span>
+              <span>does not belong because</span>
+              <span>it is different by group, use, place, size, or material.</span>
+            </div>
+          </section>
+
+          <section class="custom-panel">
+            <h2>Make a Round</h2>
+            <form id="customForm">
+              <label>
+                Items
+                <input id="customItems" type="text" placeholder="apple, banana, carrot, mango" />
+              </label>
+              <label>
+                Odd one
+                <input id="customOdd" type="text" placeholder="carrot" />
+              </label>
+              <label>
+                Why
+                <input id="customWhy" type="text" placeholder="It is a vegetable." />
+              </label>
+              <button type="submit">Use Round</button>
+            </form>
+          </section>
+
+          <section class="history-panel">
+            <div class="panel-heading">
+              <h2>Answers</h2>
+              <button id="clearHistoryBtn" type="button">Clear</button>
+            </div>
+            <ul id="historyList" class="history-list"></ul>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
