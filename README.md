@@ -1,4 +1,4 @@
-# Kids Word Search game
-Kids word game
+# Kids playtime games.
 
-This is my first program developed usign AI tools.
+Usually Children feel bored frequently. They need some attentive activities to engage.
+Here I've added some activities.
