@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What Would You Do?</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="top-band">
+        <div>
+          <p class="eyebrow">Activity 3</p>
+          <h1>What Would You Do?</h1>
+        </div>
+        <div class="stats" aria-live="polite">
+          <span><strong id="savedCount">0</strong> saved</span>
+          <span><strong id="scenarioCount">1</strong>/<strong id="totalCount">0</strong> situations</span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Activity controls">
+        <label>
+          Situation type
+          <select id="categorySelect">
+            <option value="all">All situations</option>
+            <option value="friendship">Friendship</option>
+            <option value="school">School</option>
+            <option value="responsibility">Responsibility</option>
+            <option value="safety">Safety</option>
+          </select>
+        </label>
+        <button id="newSituationBtn" type="button">New Situation</button>
+        <button id="ideaBtn" type="button">Give Me an Idea</button>
+      </section>
+
+      <section class="workspace">
+        <section class="scenario-panel" aria-labelledby="scenarioTitle">
+          <div class="scenario-heading">
+            <p id="scenarioType" class="scenario-type">Friendship</p>
+            <h2 id="scenarioTitle">You see a friend sitting alone during lunch. What can you do?</h2>
+          </div>
+
+          <form id="solutionForm" class="solution-form">
+            <fieldset>
+              <legend>Write 3 possible solutions</legend>
+              <label>
+                Option 1
+                <textarea id="solutionOne" rows="3" placeholder="One kind or practical choice"></textarea>
+              </label>
+              <label>
+                Option 2
+                <textarea id="solutionTwo" rows="3" placeholder="Another possible choice"></textarea>
+              </label>
+              <label>
+                Option 3
+                <textarea id="solutionThree" rows="3" placeholder="A third way to handle it"></textarea>
+              </label>
+            </fieldset>
+
+            <div class="choice-row">
+              <label>
+                Best option
+                <select id="bestOptionSelect">
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </label>
+              <label>
+                Why is it helpful?
+                <input id="whyInput" type="text" placeholder="It is helpful because..." />
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit">Save Response</button>
+              <button id="clearBtn" type="button">Clear</button>
+            </div>
+          </form>
+
+          <div id="feedback" class="feedback" aria-live="polite">
+            Think of choices that are kind, safe, and realistic.
+          </div>
+        </section>
+
+        <aside class="side-panel">
+          <section class="helper-panel">
+            <h2>Decision Builder</h2>
+            <div class="builder-grid">
+              <span>Kind</span>
+              <span>Does it respect feelings?</span>
+              <span>Safe</span>
+              <span>Could anyone get hurt?</span>
+              <span>Useful</span>
+              <span>Does it help solve the problem?</span>
+            </div>
+          </section>
+
+          <section class="starter-panel">
+            <div class="panel-heading">
+              <h2>Sentence Starters</h2>
+              <button id="starterBtn" type="button">Shuffle</button>
+            </div>
+            <ul id="starterList" class="starter-list"></ul>
+          </section>
+
+          <section class="journal-panel">
+            <div class="panel-heading">
+              <h2>Saved Responses</h2>
+              <button id="clearJournalBtn" type="button">Clear</button>
+            </div>
+            <ul id="journalList" class="journal-list"></ul>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
